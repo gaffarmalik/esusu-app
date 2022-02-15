@@ -2,6 +2,7 @@
 <p>The Esusu API allows you to manage Esusu groups and allows you manage your thrift collection.
  Visit the live Heroku Version at: <a href='https://esusu-app.herokuapp.com/api/'>Esusu App</a>
 </p>
+<p>API Documentation rests here: <a href="https://documenter.getpostman.com/view/11351953/UVkgxeCQ">on Postman.</a> Feel free to explore</p>
 <h3>Technologies</h3>
 - ExpressTS
 - passport-jwt
