@@ -1,6 +1,5 @@
 import { Router } from "express";
 import { getGroups, createGroup, updateGroup, joinGroupByInvite, myGroupMembers, searchGroups, contributeToGroup } from "../controllers/group";
-import { validateAuthToken } from "../utils/validateAuthToken";
 import passport from "passport";
 
 const router = Router();

@@ -1,11 +1,11 @@
 
 import passport from 'passport';
-import {ExtractJwt, Strategy as JwtStrategy} from 'passport-jwt';
+import {ExtractJwt, SecretOrKeyProvider, Strategy as JwtStrategy} from 'passport-jwt';
 import { User, UserI } from '../models/user';
 import jwt from 'jsonwebtoken';
 const opts = {
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-    secretOrKey: 'secret',
+    secretOrKey: process.env.JWT_SECRET,
 }
 
 
@@ -30,7 +30,7 @@ const signAuthToken = (user:UserI|any) =>{
         sub: user._id,
         iat: new Date().getTime(),
         exp: new Date().setDate(new Date().getDate() + 1)
-      }, 'secret' );
+      }, process.env.JWT_SECRET as string );
 
       return{...user,token };
 };
