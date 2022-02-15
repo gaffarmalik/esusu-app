@@ -8,7 +8,7 @@ const DB_URL = 'mongodb+srv://'+process.env.MONGO_USERNAME+':'+process.env.MONGO
 try {
     mongoose.connect(DB_URL,
     ()=>{ 
-        app.listen(3000, ()=> console.log('server and DB is running on port 3000')) 
+        app.listen(process.env.PORT || 3000, ()=> console.log('server and DB is running on port 3000')) 
     })
 
 } catch (error) {
